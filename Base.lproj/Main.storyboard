@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Today's Hydration-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Hydrate" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,8 +77,14 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem title="History" id="nW3-ha-1ff"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="khG-yO-R7t"/>
+                        <barButtonItem systemItem="action" id="YPq-64-h7P" userLabel="Share Action">
+                            <connections>
+                                <action selector="showActionSheet:" destination="vXZ-lx-hvc" id="oox-Ii-u8w"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="m0e-5F-3IB">
+                    <navigationItem key="navigationItem" title="Today's Hydration" id="m0e-5F-3IB">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="mJc-Cj-u6J"/>
                     </navigationItem>
                 </viewController>

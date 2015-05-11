@@ -9,6 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBAction func showActionSheet(sender: AnyObject) {
+        let optionMenu = UIAlertController(title: "test", message: "this is a test", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+
+        optionMenu.addAction(deleteAction)
+        optionMenu.addAction(cancelAction)
+        self.presentViewController(optionMenu, animated: true, completion: nil)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
