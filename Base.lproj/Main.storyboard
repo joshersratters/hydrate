@@ -17,11 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-C0-yvx" userLabel="Hydration Progress View">
-                                <rect key="frame" x="66" y="299" width="468" height="2"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2D-dB-Uyo" userLabel="AddButton">
-                                <rect key="frame" x="116" y="341" width="368" height="100"/>
+                                <rect key="frame" x="116" y="399" width="368" height="100"/>
                                 <accessibility key="accessibilityConfiguration" hint="Add" label="Add"/>
                                 <state key="normal" image="Plus">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,15 +57,28 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HZw-C0-yvx" userLabel="Hydration Progress View">
+                                <rect key="frame" x="50" y="299" width="500" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="500" id="8zJ-AG-YRm"/>
+                                    <constraint firstAttribute="height" constant="60" id="m4X-az-LqF"/>
+                                </constraints>
+                                <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8zJ-AG-YRm"/>
+                                    </mask>
+                                </variation>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="s2D-dB-Uyo" secondAttribute="trailing" constant="100" id="1Yl-jN-Jip"/>
                             <constraint firstItem="s2D-dB-Uyo" firstAttribute="top" secondItem="HZw-C0-yvx" secondAttribute="bottom" constant="40" id="Oz2-yZ-h30"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HZw-C0-yvx" secondAttribute="trailing" constant="50" id="YhQ-zs-Ksq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HZw-C0-yvx" secondAttribute="trailing" constant="34" id="YhQ-zs-Ksq"/>
                             <constraint firstItem="4mo-iO-jLB" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="hM3-mY-0vh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4mo-iO-jLB" secondAttribute="trailing" id="kll-9P-V3r"/>
-                            <constraint firstItem="HZw-C0-yvx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="50" id="nDh-Sr-gKV"/>
+                            <constraint firstItem="HZw-C0-yvx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="34" id="nDh-Sr-gKV"/>
                             <constraint firstItem="4mo-iO-jLB" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="65" id="rN7-ci-PGy"/>
                             <constraint firstItem="HZw-C0-yvx" firstAttribute="top" secondItem="4mo-iO-jLB" secondAttribute="bottom" constant="34" id="uzZ-BG-HR5"/>
                             <constraint firstItem="s2D-dB-Uyo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="100" id="vVT-jx-VAu"/>
@@ -76,7 +86,11 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="History" id="nW3-ha-1ff"/>
+                        <barButtonItem title="History" id="nW3-ha-1ff">
+                            <connections>
+                                <segue destination="NLa-ta-w4D" kind="presentation" id="Z1X-Sb-4tz"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="khG-yO-R7t"/>
                         <barButtonItem systemItem="action" id="YPq-64-h7P" userLabel="Share Action">
                             <connections>
@@ -85,17 +99,63 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Today's Hydration" id="m0e-5F-3IB">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="mJc-Cj-u6J"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="mJc-Cj-u6J">
+                            <connections>
+                                <segue destination="Iwh-sT-V4w" kind="presentation" id="mJb-Jp-eN9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1253" y="429"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--History View Controller-->
+        <scene sceneID="rrO-d9-Uy4">
+            <objects>
+                <viewController title="History" id="fYs-WN-qPB" userLabel="History View Controller" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wWa-Ia-hmW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nmt-7W-adu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GJ7-ja-qwJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="x9r-bz-Dpg">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xLL-Ue-N8W"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ksj-JU-wJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="1881"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Xy1-pW-nRL">
+            <objects>
+                <viewController title="Settings View Controller" id="2lY-v9-z46" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NcV-88-Cht"/>
+                        <viewControllerLayoutGuide type="bottom" id="6sf-8B-PqQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1IS-WX-fds">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3LR-2P-C7r">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="gOz-ZL-Oac"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I4U-gC-seA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="1887"/>
+        </scene>
+        <!--Root Navigation Controller-->
         <scene sceneID="Yqj-pi-u41">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="sRa-db-HXx" sceneMemberID="viewController">
+                <navigationController title="Today's Hydration" automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="sRa-db-HXx" userLabel="Root Navigation Controller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QiJ-IN-4gd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -112,6 +172,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYg-eL-dEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481" y="429"/>
+        </scene>
+        <!--History Navigation Controller-->
+        <scene sceneID="cJz-cX-X2R">
+            <objects>
+                <navigationController title="History" automaticallyAdjustsScrollViewInsets="NO" id="NLa-ta-w4D" userLabel="History Navigation Controller" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7gb-nb-R0f">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fYs-WN-qPB" kind="relationship" relationship="rootViewController" id="Lxo-Sl-e9w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNQ-Id-Lhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925" y="1177"/>
+        </scene>
+        <!--Settings Navigation Controller-->
+        <scene sceneID="R0J-4B-Qhv">
+            <objects>
+                <navigationController title="Settings Navigation Controller" automaticallyAdjustsScrollViewInsets="NO" id="Iwh-sT-V4w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nQN-N5-iex">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2lY-v9-z46" kind="relationship" relationship="rootViewController" id="pBo-do-ECQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hB5-ve-hqo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1569" y="1177"/>
         </scene>
     </scenes>
     <resources>

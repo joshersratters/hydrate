@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
+    //MARK: - Actionsheet
     @IBAction func showActionSheet(sender: AnyObject) {
         let optionMenu = UIAlertController(title: "test", message: "this is a test", preferredStyle: UIAlertControllerStyle.ActionSheet)
         let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in
