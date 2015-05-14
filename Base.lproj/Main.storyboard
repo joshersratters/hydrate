@@ -23,6 +23,9 @@
                                 <state key="normal" image="Plus">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addCup:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="z9W-J6-Ou9"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mo-iO-jLB" userLabel="Cups View">
                                 <rect key="frame" x="16" y="129" width="568" height="136"/>
@@ -105,6 +108,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cupsLabel" destination="9Wr-Lf-q7I" id="kAH-zo-92P"/>
+                        <outlet property="numberOfCupsLabel" destination="LJV-Ns-Nfz" id="u5w-Xl-jt0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +120,7 @@
         <!--History View Controller-->
         <scene sceneID="rrO-d9-Uy4">
             <objects>
-                <viewController title="History" id="fYs-WN-qPB" userLabel="History View Controller" sceneMemberID="viewController">
+                <viewController title="History" id="fYs-WN-qPB" userLabel="History View Controller" customClass="HistoryViewController" customModule="Hydrate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wWa-Ia-hmW"/>
                         <viewControllerLayoutGuide type="bottom" id="Nmt-7W-adu"/>
@@ -124,7 +131,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="x9r-bz-Dpg">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xLL-Ue-N8W"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xLL-Ue-N8W">
+                            <connections>
+                                <action selector="doneModal:" destination="fYs-WN-qPB" id="6m5-BB-dKN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ksj-JU-wJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -134,7 +145,7 @@
         <!--Settings View Controller-->
         <scene sceneID="Xy1-pW-nRL">
             <objects>
-                <viewController title="Settings View Controller" id="2lY-v9-z46" sceneMemberID="viewController">
+                <viewController title="Settings View Controller" id="2lY-v9-z46" customClass="SettingsViewController" customModule="Hydrate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NcV-88-Cht"/>
                         <viewControllerLayoutGuide type="bottom" id="6sf-8B-PqQ"/>
@@ -145,7 +156,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="3LR-2P-C7r">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="gOz-ZL-Oac"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="gOz-ZL-Oac">
+                            <connections>
+                                <action selector="doneModal:" destination="2lY-v9-z46" id="yVp-dO-pXj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I4U-gC-seA" userLabel="First Responder" sceneMemberID="firstResponder"/>
