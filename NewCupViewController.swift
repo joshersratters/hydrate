@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewCupViewController: UIViewController, UITextFieldDelegate {
+class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var cupVolume: UITextField!
@@ -21,7 +21,7 @@ class NewCupViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func saveCup(sender: AnyObject) {
         
-        if cupVolume.editing {
+        if cupVolume.editing == true {
             toggleSaveButton()
         } else {
         var store: Double = (cupVolume.text as NSString).doubleValue
@@ -37,10 +37,13 @@ class NewCupViewController: UIViewController, UITextFieldDelegate {
         toggleSaveButton()
     }
     
-    //MARK: Texfield Set Up
+    //MARK: Texfield
     func textFieldDidBeginEditing(textField: UITextField) {
         toggleSaveButton()
         println("Begin editing")
+        save.style = UIBarButtonItemStyle.Done
+        save.title = "Done"
+        self.navigationItem.rightBarButtonItem?.title = "Done"
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -58,8 +61,27 @@ class NewCupViewController: UIViewController, UITextFieldDelegate {
         println("End editing")
     }
     
+    //MARK: Tableview
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cups.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let title : String = "Recents"
+        return title
+    }
+    
     func toggleSaveButton() {
-        if cupVolume.editing {
+        if cupVolume.editing == true {
             save.style = UIBarButtonItemStyle.Done
             save.title = "Done"
         } else {
@@ -71,8 +93,8 @@ class NewCupViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         initialise()
-        
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

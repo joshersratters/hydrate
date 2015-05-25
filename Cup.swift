@@ -15,3 +15,4 @@ class Cup: NSManagedObject {
     @NSManaged var time: NSDate
 }
 
+var cups = [NSManagedObject]()
