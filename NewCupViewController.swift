@@ -15,49 +15,63 @@ class NewCupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var recents: UITableView!
     @IBOutlet weak var save: UIBarButtonItem!
     
-    @IBAction func volumeTapped(sender: AnyObject) {
-        
-    }
-    
     @IBAction func clear(sender: AnyObject) {
         initialise()
     }
     
     @IBAction func saveCup(sender: AnyObject) {
-        var temp: String = cupVolume.text
-        println("\(temp)")
+        
+        if cupVolume.editing {
+            toggleSaveButton()
+        } else {
+        var store: Double = (cupVolume.text as NSString).doubleValue
+        println("\(store)")
+            
+        }
     }
     
     func initialise() {
         datePicker.setDate(currentDate, animated: true)
         cupVolume.text = nil
         cupVolume.delegate = self
+        toggleSaveButton()
     }
     
     //MARK: Texfield Set Up
     func textFieldDidBeginEditing(textField: UITextField) {
-        save.enabled = false
+        toggleSaveButton()
         println("Begin editing")
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         cupVolume.resignFirstResponder()
-        
+        println("Should return")
         return true
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
         
         if cupVolume.hasText() {
-            save.enabled = true
+           
         }
         
         println("End editing")
     }
     
+    func toggleSaveButton() {
+        if cupVolume.editing {
+            save.style = UIBarButtonItemStyle.Done
+            save.title = "Done"
+        } else {
+            save.style = UIBarButtonItemStyle.Done
+            save.title = "Save"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initialise()
+        
     }
     
     override func didReceiveMemoryWarning() {

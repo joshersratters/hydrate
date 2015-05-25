@@ -162,15 +162,12 @@
                                             <constraint firstAttribute="width" constant="200" id="hHf-WO-2vP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Xbt-Km-fM4"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="e6w-PE-7w6" appends="YES" id="uaf-Gl-dng"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,7 +207,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="New Cup" id="bxV-rf-yp7">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="save" id="grE-1E-3Us">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="grE-1E-3Us">
                             <connections>
                                 <action selector="saveCup:" destination="xcE-4r-GhS" id="jwL-de-QIn"/>
                             </connections>
@@ -224,11 +221,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyw-BU-Ghi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="e6w-PE-7w6" userLabel="Volume Tap Gesture Recognizer">
-                    <connections>
-                        <action selector="volumeTapped:" destination="xcE-4r-GhS" id="C4B-wb-eRF"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1929" y="429"/>
         </scene>
