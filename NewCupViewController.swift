@@ -10,9 +10,15 @@ import UIKit
 
 class NewCupViewController: UIViewController {
     
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var cupVolume: UITextField!
+    @IBOutlet weak var recents: UITableView!
+    
+    @IBAction func saveCup(sender: AnyObject) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     

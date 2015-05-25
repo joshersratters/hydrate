@@ -8,7 +8,7 @@
         <!--Today's Hydration-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Hydrate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Today's Hydration" id="vXZ-lx-hvc" customClass="ViewController" customModule="Hydrate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -103,6 +103,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Today's Hydration" id="m0e-5F-3IB">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="iiB-Pz-AP2"/>
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="mJc-Cj-u6J">
                             <connections>
                                 <segue destination="Iwh-sT-V4w" kind="presentation" id="mJb-Jp-eN9"/>
@@ -118,10 +119,10 @@
             </objects>
             <point key="canvasLocation" x="1253" y="429"/>
         </scene>
-        <!--Add new Cup-->
+        <!--New Cup-->
         <scene sceneID="D7w-oQ-qu0">
             <objects>
-                <viewController title="Add new Cup" hidesBottomBarWhenPushed="YES" id="xcE-4r-GhS" customClass="NewCupViewController" customModule="Hydrate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Cup" hidesBottomBarWhenPushed="YES" id="xcE-4r-GhS" customClass="NewCupViewController" customModule="Hydrate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Itg-g5-HoE"/>
                         <viewControllerLayoutGuide type="bottom" id="v8K-ny-bjt"/>
@@ -198,8 +199,17 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Cup" id="bxV-rf-yp7">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="grE-1E-3Us"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="grE-1E-3Us">
+                            <connections>
+                                <action selector="saveCup:" destination="xcE-4r-GhS" id="jwL-de-QIn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cupVolume" destination="Mo7-Mg-SMp" id="P8Q-sT-1le"/>
+                        <outlet property="datePicker" destination="J8r-PQ-LiF" id="Xyz-jS-MCp"/>
+                        <outlet property="recents" destination="giw-ww-oqD" id="zo3-58-vhr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyw-BU-Ghi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
