@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    
+    var cups = [NSManagedObject]()
     
     @IBOutlet weak var numberOfCupsLabel: UILabel!
     @IBOutlet weak var cupsLabel: UILabel!
     
     @IBAction func addCup(sender: UIButton) {
-        numberOfCupsLabel.text = "2"
-        updateCupsLabel()
-        println("Button pressed")
+        
     }
     //MARK: - Actionsheet
     @IBAction func showActionSheet(sender: AnyObject) {
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func initialiseVariables() {
+    func initialiseCupsLabel() {
         cupsLabel.text = "Cup"
         numberOfCupsLabel.text = "1"
     }
@@ -51,7 +52,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialiseVariables()
+        initialiseCupsLabel()
         updateCupsLabel()
         // Do any additional setup after loading the view, typically from a nib.
     }

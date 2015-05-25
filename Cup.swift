@@ -13,5 +13,5 @@ class Cup: NSManagedObject {
 
     @NSManaged var volume: NSNumber
     @NSManaged var time: NSDate
-
 }
+
