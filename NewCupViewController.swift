@@ -15,6 +15,12 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     @IBOutlet weak var recents: UITableView!
     @IBOutlet weak var save: UIBarButtonItem!
     
+    @IBAction func tapOutside(sender: AnyObject) {
+        if cupVolume.isFirstResponder() {
+            cupVolume.resignFirstResponder()
+        }
+    }
+    
     @IBAction func clear(sender: AnyObject) {
         initialise()
     }
@@ -76,7 +82,7 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title : String = "Recents"
+        let title : String = "Recent entries"
         return title
     }
     

@@ -205,6 +205,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="qBh-Yj-19M" firstAttribute="top" secondItem="J8r-PQ-LiF" secondAttribute="bottom" id="1gt-ag-78V"/>
                             <constraint firstItem="giw-ww-oqD" firstAttribute="top" secondItem="qBh-Yj-19M" secondAttribute="bottom" constant="8" id="7hh-rj-eOA"/>
@@ -223,6 +224,9 @@
                                 <exclude reference="Og6-SU-4Xq"/>
                             </mask>
                         </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="GjJ-oy-vU6" appends="YES" id="z9I-6B-qyW"/>
+                        </connections>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Clear" id="a7Y-15-Phe">
@@ -246,6 +250,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyw-BU-Ghi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="GjJ-oy-vU6">
+                    <connections>
+                        <action selector="tapOutside:" destination="xcE-4r-GhS" id="uFc-uf-8u6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1929" y="429"/>
         </scene>
