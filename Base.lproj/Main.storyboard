@@ -32,32 +32,36 @@
                                 <rect key="frame" x="16" y="129" width="568" height="136"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJV-Ns-Nfz" userLabel="Number of Cups">
-                                        <rect key="frame" x="66" y="26" width="28" height="84"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <rect key="frame" x="270" y="-20" width="28" height="84"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cups" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wr-Lf-q7I">
-                                        <rect key="frame" x="408" y="38" width="117" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Cups Today" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wr-Lf-q7I">
+                                        <rect key="frame" x="178" y="68" width="212" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="212" id="iai-U7-Wja"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="9Wr-Lf-q7I" firstAttribute="trailing" secondItem="4mo-iO-jLB" secondAttribute="trailingMargin" constant="-35" id="1Tc-6J-BlE"/>
+                                    <constraint firstItem="LJV-Ns-Nfz" firstAttribute="top" secondItem="4mo-iO-jLB" secondAttribute="top" constant="-20" id="43N-xl-pxr"/>
+                                    <constraint firstItem="9Wr-Lf-q7I" firstAttribute="bottom" secondItem="4mo-iO-jLB" secondAttribute="bottomMargin" id="7Vn-xa-DNM"/>
+                                    <constraint firstItem="9Wr-Lf-q7I" firstAttribute="top" secondItem="LJV-Ns-Nfz" secondAttribute="bottom" constant="4" id="EmG-D9-KqS"/>
                                     <constraint firstItem="9Wr-Lf-q7I" firstAttribute="leading" secondItem="LJV-Ns-Nfz" secondAttribute="trailing" constant="40" id="F7u-s7-ock"/>
-                                    <constraint firstItem="9Wr-Lf-q7I" firstAttribute="centerY" secondItem="4mo-iO-jLB" secondAttribute="centerY" id="Rxf-PA-YGE"/>
                                     <constraint firstItem="LJV-Ns-Nfz" firstAttribute="centerY" secondItem="9Wr-Lf-q7I" secondAttribute="centerY" id="jJ4-Z5-ly6"/>
-                                    <constraint firstItem="LJV-Ns-Nfz" firstAttribute="leading" secondItem="4mo-iO-jLB" secondAttribute="leading" constant="66" id="mHv-26-h6D"/>
-                                    <constraint firstItem="LJV-Ns-Nfz" firstAttribute="top" secondItem="4mo-iO-jLB" secondAttribute="top" constant="26" id="npt-XE-8EY"/>
-                                    <constraint firstItem="LJV-Ns-Nfz" firstAttribute="centerY" secondItem="9Wr-Lf-q7I" secondAttribute="centerY" id="oCl-ce-8Fx"/>
+                                    <constraint firstItem="9Wr-Lf-q7I" firstAttribute="centerX" secondItem="4mo-iO-jLB" secondAttribute="centerX" id="oF4-DZ-2gS"/>
+                                    <constraint firstItem="9Wr-Lf-q7I" firstAttribute="centerX" secondItem="LJV-Ns-Nfz" secondAttribute="centerX" id="ycM-8X-yvE"/>
+                                    <constraint firstAttribute="bottom" secondItem="LJV-Ns-Nfz" secondAttribute="bottom" constant="72" id="zMH-W9-UbF"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="jJ4-Z5-ly6"/>
                                         <exclude reference="F7u-s7-ock"/>
+                                        <exclude reference="jJ4-Z5-ly6"/>
                                     </mask>
                                 </variation>
                             </view>

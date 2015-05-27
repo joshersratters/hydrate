@@ -38,9 +38,9 @@ class ViewController: UIViewController {
     
     func updateCupsLabel() {
         if numberOfCupsLabel.text! == "1" {
-            cupsLabel.text = "Cup"
+            cupsLabel.text = "Cup today"
         } else {
-            cupsLabel.text = "Cups"
+            cupsLabel.text = "Cups today"
         }
     }
     
