@@ -22,16 +22,16 @@ class ViewController: UIViewController {
     }
     //MARK: - Actionsheet
     @IBAction func showActionSheet(sender: AnyObject) {
-        let optionMenu = UIAlertController(title: "test", message: "this is a test", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in
+        let optionMenu = UIAlertController(title: "Share", message: "Share today's progress with Twitter", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let shareAction = UIAlertAction(title: "Share", style: UIAlertActionStyle.Default, handler: {(alert: UIAlertAction!) -> Void in
             
         })
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {
             (alert: UIAlertAction!) -> Void in
         })
 
-        optionMenu.addAction(deleteAction)
+        optionMenu.addAction(shareAction)
         optionMenu.addAction(cancelAction)
         self.presentViewController(optionMenu, animated: true, completion: nil)
     }
