@@ -27,13 +27,19 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     
     @IBAction func saveCup(sender: AnyObject) {
         
-        if cupVolume.editing == true {
+        if cupVolume.isFirstResponder() {
+            cupVolume.resignFirstResponder()
             toggleSaveButton()
+        } else if !cupVolume.isFirstResponder() && cupVolume.hasText() {
+            var store: Double = (cupVolume.text as NSString).doubleValue
+            println("\(store)")
         } else {
-        var store: Double = (cupVolume.text as NSString).doubleValue
-        println("\(store)")
-            
+            let alertController = UIAlertController(title: "No Data", message: "Either no data is present or invalid", preferredStyle: .Alert)
+            let defaultAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            presentViewController(alertController, animated: true, completion: nil)
         }
+        
     }
     
     func initialise() {
@@ -45,25 +51,20 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     
     //MARK: Texfield
     func textFieldDidBeginEditing(textField: UITextField) {
-        toggleSaveButton()
         println("Begin editing")
-        save.style = UIBarButtonItemStyle.Done
-        save.title = "Done"
-        self.navigationItem.rightBarButtonItem?.title = "Done"
+        toggleSaveButton()
+        
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         cupVolume.resignFirstResponder()
         println("Should return")
+        toggleSaveButton()
         return true
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        
-        if cupVolume.hasText() {
-           
-        }
-        
+        toggleSaveButton()
         println("End editing")
     }
     
@@ -87,11 +88,9 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     func toggleSaveButton() {
-        if cupVolume.editing == true {
-            save.style = UIBarButtonItemStyle.Done
+        if cupVolume.isFirstResponder() {
             save.title = "Done"
         } else {
-            save.style = UIBarButtonItemStyle.Done
             save.title = "Save"
         }
     }
