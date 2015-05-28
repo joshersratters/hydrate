@@ -48,7 +48,6 @@ class ViewController: UIViewController {
         cupsLabel.text = "Cup"
         numberOfCupsLabel.text = "1"
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

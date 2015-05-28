@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+    
+    //var currentDate = Date()
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var cupVolume: UITextField!
@@ -32,6 +35,7 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             toggleSaveButton()
         } else if !cupVolume.isFirstResponder() && cupVolume.hasText() {
             var store: Double = (cupVolume.text as NSString).doubleValue
+            navigationController?.popViewControllerAnimated(true)
             println("\(store)")
         } else {
             let alertController = UIAlertController(title: "No Data", message: "Either no data is present or invalid", preferredStyle: .Alert)
@@ -42,12 +46,43 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         
     }
     
+    func toggleSaveButton() {
+        if cupVolume.isFirstResponder() {
+            save.title = "Done"
+        } else {
+            save.title = "Save"
+        }
+    }
+    
     func initialise() {
-        datePicker.setDate(currentDate, animated: true)
+        datePicker.setDate(Date().getCurrentDate(), animated: true)
         cupVolume.text = nil
         cupVolume.delegate = self
         toggleSaveButton()
+        
     }
+    
+    func saveVolume(volume: String) {
+        //1
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext!
+        
+        //2
+        let entity = NSEntityDescription.entityForName("volume", inManagedObjectContext: managedContext)
+        let volume = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        //3
+        Cup.setValue(volume, forKey: "volume")
+        
+        //4
+        var error: NSError?
+        if !managedContext.save(&error) {
+            println("Could not save \(error), \(error?.userInfo)")
+        }
+        
+        cups.append(volume)
+    }
+
     
     //MARK: Texfield
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -86,20 +121,15 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         let title : String = "Recent entries"
         return title
     }
-    
-    func toggleSaveButton() {
-        if cupVolume.isFirstResponder() {
-            save.title = "Done"
-        } else {
-            save.title = "Save"
-        }
-    }
-    
+    //MARK: System Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         initialise()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        Date().getCurrentDate()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
