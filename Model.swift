@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class Cup: NSManagedObject {
+class Model: NSManagedObject {
 
     @NSManaged var volume: NSNumber
     @NSManaged var time: NSDate
