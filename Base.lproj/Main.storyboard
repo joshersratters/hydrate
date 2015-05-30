@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sRa-db-HXx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E26a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sRa-db-HXx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -273,13 +273,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9VV-Vm-i4R">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="139" width="600" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="2Jb-rd-SEP">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="kwC-TY-Oat" detailTextLabel="gy8-eL-ECh" style="IBUITableViewCellStyleSubtitle" id="2Jb-rd-SEP">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Jb-rd-SEP" id="KwE-37-Dca">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kwC-TY-Oat">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gy8-eL-ECh">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -288,16 +302,53 @@
                                     <outlet property="delegate" destination="fYs-WN-qPB" id="vtQ-vn-AxH"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUW-ex-Otf">
+                                <rect key="frame" x="225" y="72" width="151" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="151" id="2ne-LA-1n9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UT-vS-V7A">
+                                <rect key="frame" x="552" y="76" width="32" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextDay:" destination="fYs-WN-qPB" eventType="touchUpInside" id="34N-KM-Vrr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6K4-Aa-nHB">
+                                <rect key="frame" x="16" y="76" width="59" height="30"/>
+                                <state key="normal" title="Previous">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="previousDay:" destination="fYs-WN-qPB" eventType="touchUpInside" id="g6h-sf-lI0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Nmt-7W-adu" firstAttribute="top" secondItem="9VV-Vm-i4R" secondAttribute="bottom" id="BIw-bV-Y1s"/>
-                            <constraint firstAttribute="trailing" secondItem="9VV-Vm-i4R" secondAttribute="trailing" id="D2a-gd-Noy"/>
-                            <constraint firstItem="9VV-Vm-i4R" firstAttribute="top" secondItem="wWa-Ia-hmW" secondAttribute="bottom" id="Ofd-WQ-Jax"/>
-                            <constraint firstItem="9VV-Vm-i4R" firstAttribute="leading" secondItem="GJ7-ja-qwJ" secondAttribute="leading" id="Xsn-rc-TIv"/>
+                            <constraint firstItem="9VV-Vm-i4R" firstAttribute="top" secondItem="6K4-Aa-nHB" secondAttribute="bottom" constant="33" id="7En-ou-nis"/>
+                            <constraint firstItem="3UT-vS-V7A" firstAttribute="baseline" secondItem="6K4-Aa-nHB" secondAttribute="baseline" id="8Em-x3-UYd"/>
+                            <constraint firstItem="9VV-Vm-i4R" firstAttribute="centerX" secondItem="jUW-ex-Otf" secondAttribute="centerX" id="EyT-dy-CdK"/>
+                            <constraint firstItem="3UT-vS-V7A" firstAttribute="trailing" secondItem="GJ7-ja-qwJ" secondAttribute="trailingMargin" id="N4w-Fp-eQc"/>
+                            <constraint firstAttribute="trailing" secondItem="9VV-Vm-i4R" secondAttribute="trailing" id="Rhs-W1-RST"/>
+                            <constraint firstItem="9VV-Vm-i4R" firstAttribute="top" secondItem="jUW-ex-Otf" secondAttribute="bottom" constant="30" id="S3N-x1-M7I"/>
+                            <constraint firstItem="9VV-Vm-i4R" firstAttribute="leading" secondItem="GJ7-ja-qwJ" secondAttribute="leading" id="bnK-aq-gnY"/>
+                            <constraint firstItem="6K4-Aa-nHB" firstAttribute="top" secondItem="wWa-Ia-hmW" secondAttribute="bottom" constant="12" id="kMw-hI-Rhq"/>
+                            <constraint firstItem="jUW-ex-Otf" firstAttribute="top" secondItem="wWa-Ia-hmW" secondAttribute="bottom" constant="8" symbolic="YES" id="rtA-6j-v2y"/>
+                            <constraint firstItem="9VV-Vm-i4R" firstAttribute="bottom" secondItem="Nmt-7W-adu" secondAttribute="top" id="uwB-Wa-uMQ"/>
+                            <constraint firstItem="6K4-Aa-nHB" firstAttribute="leading" secondItem="GJ7-ja-qwJ" secondAttribute="leadingMargin" id="yS2-sU-9yr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="x9r-bz-Dpg">
+                    <navigationItem key="navigationItem" title="History" id="x9r-bz-Dpg">
+                        <barButtonItem key="leftBarButtonItem" title="Today" id="th4-IT-3A7">
+                            <connections>
+                                <action selector="today:" destination="fYs-WN-qPB" id="cgb-Zr-Iut"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xLL-Ue-N8W">
                             <connections>
                                 <action selector="doneModal:" destination="fYs-WN-qPB" id="6m5-BB-dKN"/>
@@ -305,6 +356,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="historyDate" destination="jUW-ex-Otf" id="fag-8y-yge"/>
                         <outlet property="tableView" destination="9VV-Vm-i4R" id="ayB-WR-5dx"/>
                     </connections>
                 </viewController>
@@ -325,7 +377,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3LR-2P-C7r">
+                    <navigationItem key="navigationItem" title="Settings" id="3LR-2P-C7r">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="gOz-ZL-Oac">
                             <connections>
                                 <action selector="doneModal:" destination="2lY-v9-z46" id="yVp-dO-pXj"/>

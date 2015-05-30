@@ -12,8 +12,19 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var cupHistory: Array<AnyObject> = []
     
+    @IBOutlet weak var historyDate: UILabel!
+    
     @IBAction func doneModal(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func today(sender: AnyObject) {
+    }
+    
+    @IBAction func previousDay(sender: AnyObject) {
+    }
+    
+    @IBAction func nextDay(sender: AnyObject) {
     }
     
     //MARK: Tableview
