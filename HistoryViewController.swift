@@ -4,7 +4,7 @@
 //
 //  Created by Joshua Ratcliffe on 13/05/2015.
 //  Copyright (c) 2015 Joshua Ratcliffe. All rights reserved.
-//
+//http://jamesonquave.com/blog/core-data-in-swift-tutorial-part-1/
 
 import UIKit
 import CoreData
@@ -16,6 +16,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func doneModal(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func selectDate(sender: AnyObject) {
     }
     
     @IBAction func today(sender: AnyObject) {
@@ -42,11 +45,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let cellID: String = "cell"
         
-        var cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! UITableViewCell
             
         var data: NSManagedObject = (cupHistory[indexPath.row] as? NSManagedObject)!
         cell.textLabel?.text = data.valueForKey("volume") as? String
-        
+        //cell.detailTextLabel?.text = data.valueForKey("volume") as? String
         
         
         
