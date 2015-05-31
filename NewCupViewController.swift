@@ -31,12 +31,17 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     
     @IBAction func saveCup(sender: AnyObject) {
         
-        //Grab current user entered values
-        currentVolume = cupVolume.text
-        currentDate = datePicker.date
-        var volume = currentVolume!.doubleValue
-        var date = currentDate!
-        
+        if cupVolume.isFirstResponder() {
+            cupVolume.resignFirstResponder()
+            toggleSaveButton()
+        } else if !cupVolume.isFirstResponder() && cupVolume.hasText() {
+            
+            //Grab current user entered values
+            currentVolume = cupVolume.text
+            currentDate = datePicker.date
+            var volume = currentVolume!.doubleValue
+            var date = currentDate!
+            
             //Reference app delegate
             let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             
@@ -46,7 +51,7 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             
             //Create instance of our data model and initialise the data
             var newCup = Model(entity: entity!, insertIntoManagedObjectContext: context)
-        
+            
             //Map our properties
             newCup.volume = volume
             newCup.time = date
@@ -57,15 +62,7 @@ class NewCupViewController: UIViewController, UITextFieldDelegate, UITableViewDe
             
             //Navigate back to root view controller?
             navigationController?.popViewControllerAnimated(true)
-        
-        
-        if cupVolume.isFirstResponder() {
-            cupVolume.resignFirstResponder()
-            toggleSaveButton()
-        } else if !cupVolume.isFirstResponder() && cupVolume.hasText() {
-            var store: Double = (cupVolume.text as NSString).doubleValue
-            navigationController?.popViewControllerAnimated(true)
-            println("\(store)")
+            
         } else {
             let alertController = UIAlertController(title: "No Data", message: "Either no data is present or invalid", preferredStyle: .Alert)
             let defaultAction = UIAlertAction(title: "Okay", style: .Default, handler: nil)

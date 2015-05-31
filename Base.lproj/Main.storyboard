@@ -138,7 +138,7 @@
                                 </date>
                             </datePicker>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="giw-ww-oqD">
-                                <rect key="frame" x="0.0" y="291" width="600" height="257"/>
+                                <rect key="frame" x="0.0" y="291" width="600" height="265"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="269" id="meZ-Gl-bnM"/>
@@ -220,7 +220,7 @@
                             <constraint firstItem="J8r-PQ-LiF" firstAttribute="trailing" secondItem="qBh-Yj-19M" secondAttribute="trailing" id="L1G-BV-E0G"/>
                             <constraint firstAttribute="trailing" secondItem="J8r-PQ-LiF" secondAttribute="trailing" id="MrF-EA-r3g"/>
                             <constraint firstItem="giw-ww-oqD" firstAttribute="leading" secondItem="qBh-Yj-19M" secondAttribute="leading" id="ZfQ-Db-rWo"/>
-                            <constraint firstItem="v8K-ny-bjt" firstAttribute="top" secondItem="giw-ww-oqD" secondAttribute="bottom" constant="8" symbolic="YES" id="lUR-Ej-StN"/>
+                            <constraint firstItem="v8K-ny-bjt" firstAttribute="top" secondItem="giw-ww-oqD" secondAttribute="bottom" id="lUR-Ej-StN"/>
                             <constraint firstItem="qBh-Yj-19M" firstAttribute="trailing" secondItem="giw-ww-oqD" secondAttribute="trailing" id="o61-ae-sFx"/>
                             <constraint firstItem="giw-ww-oqD" firstAttribute="top" secondItem="qBh-Yj-19M" secondAttribute="bottom" constant="20" id="sSL-lo-98y"/>
                         </constraints>
@@ -288,6 +288,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6K4-Aa-nHB">
                                 <rect key="frame" x="16" y="76" width="59" height="30"/>
                                 <state key="normal" title="Previous">
+                                    <color key="titleColor" red="0.12549019610000001" green="0.60392156860000001" blue="0.54268041720000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -296,7 +297,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UT-vS-V7A">
                                 <rect key="frame" x="552" y="76" width="32" height="30"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.12549019610000001" green="0.60392156860000001" blue="0.54268041720000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="nextDay:" destination="fYs-WN-qPB" eventType="touchUpInside" id="34N-KM-Vrr"/>
                                 </connections>
@@ -349,11 +352,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="History" id="x9r-bz-Dpg">
                         <barButtonItem key="leftBarButtonItem" title="Today" id="th4-IT-3A7">
+                            <color key="tintColor" red="0.12549019610000001" green="0.60392156860000001" blue="0.54268041720000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="today:" destination="fYs-WN-qPB" id="cgb-Zr-Iut"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xLL-Ue-N8W">
+                            <color key="tintColor" red="0.12549019610000001" green="0.60392156860000001" blue="0.54268041720000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="doneModal:" destination="fYs-WN-qPB" id="6m5-BB-dKN"/>
                             </connections>
@@ -388,6 +393,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="3LR-2P-C7r">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="gOz-ZL-Oac">
+                            <color key="tintColor" red="0.12549019610000001" green="0.60392156860000001" blue="0.54268041720000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="doneModal:" destination="2lY-v9-z46" id="yVp-dO-pXj"/>
                             </connections>
