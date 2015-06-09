@@ -10,7 +10,11 @@ import UIKit
 import CoreData
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var cupHistory: Array<AnyObject> = []
+    // Create an empty array of Cups
+    var cups = [Model]()
+    
+    // Retreive the managedObjectContext from AppDelegate
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     @IBOutlet weak var historyDate: UILabel!
     
@@ -38,7 +42,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cupHistory.count
+        return cups.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -46,14 +50,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cellID: String = "cell"
         
         var cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath) as! UITableViewCell
-            
-        var data: NSManagedObject = (cupHistory[indexPath.row] as? NSManagedObject)!
-        cell.textLabel?.text = data.valueForKey("volume") as? String
-        //cell.detailTextLabel?.text = data.valueForKey("volume") as? String
         
+        // Get the cup for this index
+        let cup = cups[indexPath.row]
         
-        
-        
+        // Set the title of the cell to be the title of the logItem
+        cell.textLabel?.text = cup.volume.description
         return cell
     }
     
@@ -67,9 +69,29 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        fetchCup()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    func fetchCup() {
+        let fetchRequest = NSFetchRequest(entityName: "Cup")
+        
+        // Create a sort descriptor object that sorts on the "title"
+        // property of the Core Data object
+        let sortDescriptor = NSSortDescriptor(key: "time", ascending: true)
+        
+        // Set the list of sort descriptors in the fetch request,
+        // so it includes the sort descriptor
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Model] {
+            cups = fetchResults
+        }
+    }
+
+    }
+    
+     func viewDidAppear(animated: Bool) {
         //Reference app delegate
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -79,16 +101,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         //Reference to fetch request
         let fetchrequest = NSFetchRequest(entityName: "Cup")
         
-        cupHistory = context.executeFetchRequest(fetchrequest, error: nil)!
-        tableView.reloadData()
-        
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+     func didReceiveMemoryWarning() {
         // Dispose of any resources that can be recreated.
     }
     
 
-}
+
