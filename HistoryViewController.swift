@@ -13,6 +13,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     // Create an empty array of Cups
     var cups = [Model]()
     
+    var date = NSDate()
+    
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
@@ -54,8 +56,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Get the cup for this index
         let cup = cups[indexPath.row]
         
-        // Set the title of the cell to be the title of the logItem
-        cell.textLabel?.text = cup.volume.description
+        // Set the title of the cell to be the volume (description) of the cup
+        cell.textLabel?.text = cup.time.description
+        cell.detailTextLabel?.text = cup.volume.description
         return cell
     }
     
@@ -76,9 +79,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func fetchCup() {
         let fetchRequest = NSFetchRequest(entityName: "Cup")
         
-        // Create a sort descriptor object that sorts on the "title"
+        // Create a sort descriptor object that sorts on the "time"
         // property of the Core Data object
-        let sortDescriptor = NSSortDescriptor(key: "time", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "time", ascending: false)
         
         // Set the list of sort descriptors in the fetch request,
         // so it includes the sort descriptor

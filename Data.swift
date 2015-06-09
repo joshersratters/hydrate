@@ -8,8 +8,6 @@
 
 import Foundation
 
-//var currentDate: NSDate = NSDate()
-
 func getCurrentDate() -> NSDate {
     var date = NSDate()
     
