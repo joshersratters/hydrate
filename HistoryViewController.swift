@@ -55,10 +55,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // Get the cup for this index
         let cup = cups[indexPath.row]
-        let cuplabel = cups[indexPath.row].description
+        let cupLabel = (cups.count - indexPath.row)
         // Set the title of the cell to be the volume (description) of the cup
         cell.textLabel?.text = cup.time.description
-        cell.detailTextLabel?.text = cuplabel
+        cell.detailTextLabel?.text = cupLabel.description
         return cell
     }
     
