@@ -12,5 +12,6 @@ import CoreData
 class Cup: NSManagedObject {
 
     @NSManaged var time: NSDate
+    @NSManaged var category: String
 
 }

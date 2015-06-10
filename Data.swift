@@ -36,3 +36,7 @@ struct Date {
     }
 }
 
+struct Constants {
+    let cupType: [String] = ["Water", "Squash", "Milk", "Tea", "Coffee"]
+}
+
