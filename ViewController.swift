@@ -12,7 +12,7 @@ import CoreData
 class ViewController: UIViewController {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
-    var cups = [Model]()
+    var cups = [Cup]()
     
     @IBOutlet weak var numberOfCupsLabel: UILabel!
     @IBOutlet weak var cupsLabel: UILabel!
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         // so it includes the sort descriptor
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Model] {
+        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Cup] {
             cups = fetchResults
         }
     }

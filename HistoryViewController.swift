@@ -11,7 +11,7 @@ import CoreData
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Create an empty array of Cups
-    var cups = [Model]()
+    var cups = [Cup]()
     
     var date = NSDate()
     
@@ -55,10 +55,10 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         // Get the cup for this index
         let cup = cups[indexPath.row]
-        
+        let cuplabel = cups[indexPath.row].description
         // Set the title of the cell to be the volume (description) of the cup
         cell.textLabel?.text = cup.time.description
-        cell.detailTextLabel?.text = cup.volume.description
+        cell.detailTextLabel?.text = cuplabel
         return cell
     }
     
@@ -100,7 +100,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         // so it includes the sort descriptor
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Model] {
+        if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Cup] {
             cups = fetchResults
         }
     }
