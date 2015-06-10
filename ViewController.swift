@@ -90,7 +90,8 @@ class ViewController: UIViewController {
         //Reference to fetch request
         let fetchrequest = NSFetchRequest(entityName: "Cup")
         
-        
+        fetchCup()
+        updateCupsLabel()
     }
 
     override func didReceiveMemoryWarning() {

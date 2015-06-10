@@ -16,3 +16,4 @@ class Model: NSManagedObject {
 }
 
 var cups = [NSManagedObject]()
+

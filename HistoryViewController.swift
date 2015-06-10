@@ -67,7 +67,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         return title
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -75,7 +74,21 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         fetchCup()
     }
-    
+
+     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        //Reference app delegate
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        //Reference to managed object context
+        let context: NSManagedObjectContext = appDelegate.managedObjectContext!
+        
+        //Reference to fetch request
+        let fetchrequest = NSFetchRequest(entityName: "Cup")
+        
+        fetchCup()
+    }
+
     func fetchCup() {
         let fetchRequest = NSFetchRequest(entityName: "Cup")
         
@@ -92,24 +105,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
-    }
-    
-     func viewDidAppear(animated: Bool) {
-        //Reference app delegate
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        //Reference to managed object context
-        let context: NSManagedObjectContext = appDelegate.managedObjectContext!
-        
-        //Reference to fetch request
-        let fetchrequest = NSFetchRequest(entityName: "Cup")
-        
-        
-    }
-
-     func didReceiveMemoryWarning() {
+     override func didReceiveMemoryWarning() {
         // Dispose of any resources that can be recreated.
     }
     
-
+}
 
