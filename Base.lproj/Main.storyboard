@@ -50,7 +50,7 @@
                                     <constraint firstAttribute="width" constant="500" id="8zJ-AG-YRm"/>
                                     <constraint firstAttribute="height" constant="50" id="PdO-4o-uh7"/>
                                 </constraints>
-                                <color key="progressTintColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="progressTintColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="8zJ-AG-YRm"/>
@@ -64,7 +64,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="200"/>
                                 <state key="normal" title="+">
-                                    <color key="titleColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -88,7 +88,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem title="History" id="nW3-ha-1ff">
-                            <color key="tintColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="NLa-ta-w4D" kind="presentation" id="Z1X-Sb-4tz"/>
                             </connections>
@@ -104,7 +104,7 @@
                     <navigationItem key="navigationItem" title="Today's Hydration" id="m0e-5F-3IB">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="iiB-Pz-AP2"/>
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="mJc-Cj-u6J">
-                            <color key="tintColor" red="0.40392156862745099" green="0.98039215686274506" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="Iwh-sT-V4w" kind="presentation" id="mJb-Jp-eN9"/>
                             </connections>
@@ -230,7 +230,7 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Clear" id="a7Y-15-Phe">
-                            <color key="tintColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="clear:" destination="xcE-4r-GhS" id="gUA-k5-UPT"/>
                             </connections>
@@ -238,7 +238,7 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="New Cup" id="bxV-rf-yp7">
                         <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="grE-1E-3Us">
-                            <color key="tintColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="saveCup:" destination="xcE-4r-GhS" id="jwL-de-QIn"/>
                             </connections>
@@ -288,7 +288,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6K4-Aa-nHB">
                                 <rect key="frame" x="16" y="76" width="59" height="30"/>
                                 <state key="normal" title="Previous">
-                                    <color key="titleColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -298,7 +298,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UT-vS-V7A">
                                 <rect key="frame" x="552" y="76" width="32" height="30"/>
                                 <state key="normal" title="Next">
-                                    <color key="titleColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="nextDay:" destination="fYs-WN-qPB" eventType="touchUpInside" id="34N-KM-Vrr"/>
@@ -351,13 +351,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="History" id="x9r-bz-Dpg">
                         <barButtonItem key="leftBarButtonItem" title="Today" id="th4-IT-3A7">
-                            <color key="tintColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="today:" destination="fYs-WN-qPB" id="cgb-Zr-Iut"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="xLL-Ue-N8W">
-                            <color key="tintColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="doneModal:" destination="fYs-WN-qPB" id="6m5-BB-dKN"/>
                             </connections>
@@ -392,7 +392,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="3LR-2P-C7r">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="gOz-ZL-Oac">
-                            <color key="tintColor" red="0.4039215686" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.40209693870000002" green="0.83769591720000003" blue="0.84993953170000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="doneModal:" destination="2lY-v9-z46" id="yVp-dO-pXj"/>
                             </connections>
