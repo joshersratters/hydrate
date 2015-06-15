@@ -12,7 +12,6 @@ import CoreData
 class NewCupViewController: UIViewController {
 
     var currentDate: NSDate?
-    var currentCategory: String?
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var save: UIBarButtonItem!
