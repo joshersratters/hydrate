@@ -13,7 +13,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     // Create an empty array of Cups
     var cups = [Cup]()
     
+    // Grab the current date
     var date = NSDate()
+    var testDate = Date().formatCurrentDate(NSDate())
     
     // Retreive the managedObjectContext from AppDelegate
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -66,13 +68,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let title : String = "History"
         return title
     }
-
+    
+    //Mark: System Functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
         fetchCup()
+        println(testDate)
     }
 
      override func viewDidAppear(animated: Bool) {
@@ -90,6 +94,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func fetchCup() {
+        //Create a fetch request
         let fetchRequest = NSFetchRequest(entityName: "Cup")
         
         // Create a sort descriptor object that sorts on the "time"
@@ -99,6 +104,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Set the list of sort descriptors in the fetch request,
         // so it includes the sort descriptor
         fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        // Create a new predicate that filters out any object that
+        // doesn't have a date of today's date.
+        let predicate = NSPredicate(format: "time IN", "\(testDate)")
+        
+        // Set the predicate on the fetch request
+        fetchRequest.predicate = predicate
         
         if let fetchResults = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil) as? [Cup] {
             cups = fetchResults

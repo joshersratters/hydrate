@@ -51,7 +51,7 @@ class NewCupViewController: UIViewController {
     
     //Mark: Custom Functions
     func initialise() {
-        datePicker.setDate(Date().getCurrentDate(), animated: true)
+        datePicker.setDate(Date().currentDate, animated: true)
     }
     
     //MARK: System Functions
@@ -61,7 +61,7 @@ class NewCupViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        Date().getCurrentDate()
+        Date().currentDate
     }
     
     override func didReceiveMemoryWarning() {
