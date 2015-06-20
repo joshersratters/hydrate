@@ -11,7 +11,7 @@ import CoreData
 
 class NewCupViewController: UIViewController {
 
-    var currentDate: NSDate?
+    var currentDate: NSDate? = Date().currentDate
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var save: UIBarButtonItem!
@@ -24,7 +24,7 @@ class NewCupViewController: UIViewController {
         
         //Grab current user entered values
         currentDate = datePicker.date
-        var date = currentDate!
+        var date = Date().formatCurrentDate(currentDate!)
         
         //Reference app delegate
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -51,7 +51,9 @@ class NewCupViewController: UIViewController {
     
     //Mark: Custom Functions
     func initialise() {
-        datePicker.setDate(Date().currentDate, animated: true)
+        datePicker.timeZone = NSTimeZone.localTimeZone()
+        datePicker.locale = NSLocale.systemLocale()
+        datePicker.setDate(Date().formatCurrentDate(currentDate!), animated: true)
     }
     
     //MARK: System Functions

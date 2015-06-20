@@ -8,14 +8,6 @@
 
 import Foundation
 
-func getCurrentDate() -> NSDate {
-    var date = NSDate()
-    var formatter = NSDateFormatter()
-
-    return date
-}
-
-
 struct Date {
     //Properties
     var currentDate = NSDate()
@@ -24,7 +16,7 @@ struct Date {
     //Methods
     func formatCurrentDate(date: NSDate) -> NSDate {
         var formatter = NSDateFormatter()
-        formatter.dateFormat = "YYYY/MM/dd Z"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
         let systemTimeZoneStr = formatter.stringFromDate(date)
         formatter.timeZone = NSTimeZone(abbreviation: "\(timeZone)")
         let systemTimeZoneNs: NSDate = formatter.dateFromString(systemTimeZoneStr)!
