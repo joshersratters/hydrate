@@ -19,14 +19,17 @@ func getCurrentDate() -> NSDate {
 struct Date {
     //Properties
     var currentDate = NSDate()
+    let timeZone = NSTimeZone.systemTimeZone()
 
     //Methods
-    func formatCurrentDate(date: NSDate) -> String {
+    func formatCurrentDate(date: NSDate) -> NSDate {
         var formatter = NSDateFormatter()
         formatter.dateFormat = "YYYY/MM/dd Z"
-        let defaultTimeZoneStr = formatter.stringFromDate(date)
+        let systemTimeZoneStr = formatter.stringFromDate(date)
+        formatter.timeZone = NSTimeZone(abbreviation: "\(timeZone)")
+        let systemTimeZoneNs: NSDate = formatter.dateFromString(systemTimeZoneStr)!
         
-        return defaultTimeZoneStr
+        return systemTimeZoneNs
     }
 }
 
