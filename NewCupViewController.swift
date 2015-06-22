@@ -11,7 +11,7 @@ import CoreData
 
 class NewCupViewController: UIViewController {
 
-    var currentDate: NSDate? = Date().currentDate
+    var currentDate: NSDate?
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var save: UIBarButtonItem!
@@ -51,9 +51,9 @@ class NewCupViewController: UIViewController {
     
     //Mark: Custom Functions
     func initialise() {
-        datePicker.timeZone = NSTimeZone.localTimeZone()
-        datePicker.locale = NSLocale.systemLocale()
-        datePicker.setDate(Date().formatCurrentDate(currentDate!), animated: true)
+        //datePicker.timeZone = NSTimeZone.localTimeZone()
+       // datePicker.locale = NSLocale.systemLocale()
+       // datePicker.setDate(Date().formatCurrentDate(currentDate!), animated: true)
     }
     
     //MARK: System Functions
@@ -63,7 +63,7 @@ class NewCupViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        Date().currentDate
+
     }
     
     override func didReceiveMemoryWarning() {
